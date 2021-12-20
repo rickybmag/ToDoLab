@@ -1,0 +1,24 @@
+﻿@model EmployeeTaskViewModel
+    <h2>Task Assignment Form</h2>
+    <form action="/" method="post">
+        <p>Select an Employee</p>
+        <select name="employeeId">
+            @foreach (Employee e in Model.Employees)
+            {
+                <option value="@e.Id">@e.Name</option>
+            }
+        </select>
+
+
+        <br />
+
+        <p>Select a task to assign to the Employee</p>
+        <select name="toDoId">
+            @foreach (ToDo t in Model.ToDos)
+            {
+                <option value="@t.Id">@t.Name</option>
+            }
+        </select>
+
+        <input type="submit" name="Submit Task" value="Submit Task" />
+    </form>

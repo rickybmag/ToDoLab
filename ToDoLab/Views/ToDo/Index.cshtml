@@ -1,0 +1,19 @@
+﻿@model IEnumerable<ToDo>
+
+<h2>To-Do Items: </h2>
+
+    <a asp-action="Create" asp-controller="Todo"><button>Create To-Do</button></a>
+    <br /> 
+    <div>
+        @foreach (var t in Model)
+        {
+        <div style="border: 2px solid black">
+            <p style="font-weight:bold">To-Do Item: @t.Name</p>
+            <p>Description: @t.Description</p>
+            <p>Hours Needed to Complete: @t.HoursNeeded</p>
+            <p>Is Task Completed: @t.IsCompleted</p>
+
+            <a asp-action="AssignToDo" asp-controller="Todo" asp-route-id="@t.Id"><button>Assign To-Do Item</button></a>
+        </div>
+        }
+    </div>

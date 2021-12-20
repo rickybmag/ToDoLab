@@ -1,0 +1,10 @@
+﻿@model Employee
+
+<h2>Employee Details</h2>
+    <div style="border: 2px solid black">
+        <h2>Employee Info</h2>
+        <p>Employee Name: @Model.Name</p>
+        <p>Job Title: @Model.Title</p>
+        <p>Hours Working: @Model.Hours</p>
+    </div>
+    <a asp-action="AddEmployee" asp-controller="Employee" asp-route-id="@Model.Id"><p>Add New Employee</p></a>
